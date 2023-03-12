@@ -6,10 +6,12 @@ function NewIncome(props) {
   // set the useState for the incomeAmount
   const [incomeAmount, setIncomeAmount] = useState(0);
 
-  // function to do store the income if the incomeAmount is more than 0
+  // function to store the income if the incomeAmount is more than 0
   function handleStoringIncome() {
     if (incomeAmount > 0) {
+      // lift it up
       props.onStoreIncome(incomeAmount);
+      // reset incomeAmount
       setIncomeAmount(0);
     }
     else {
