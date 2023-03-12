@@ -15,7 +15,6 @@ function NewIncome(props) {
       setIncomeAmount(0);
     }
     else {
-      // less than 0 reset incomeAmount
       alert("Can't add add 0 or less than 0 to your income, can you? That would be an expense. Just input a normal positive number o_o")
       setIncomeAmount(0);
     }
@@ -138,4 +137,3 @@ const App = () => {
 }
 
 export default App;
-
