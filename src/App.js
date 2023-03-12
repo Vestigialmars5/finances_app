@@ -1,81 +1,10 @@
 import {useState} from 'react'
 import './App.css';
+import NewExpenses from './components/NewExpenses/NewExpenses.js'
+import NewIncome from './components/NewIncome/NewIncome.js'
+import CategoryDropdown from './components/CategoryDropdown/CategoryDropdown.js'
 
-// new income section component
-function NewIncome(props) {
-  // set the useState for the incomeAmount
-  const [incomeAmount, setIncomeAmount] = useState(0);
 
-  // function to store the income if the incomeAmount is more than 0
-  function handleStoringIncome() {
-    if (incomeAmount > 0) {
-      // lift it up
-      props.onStoreIncome(incomeAmount);
-      // reset incomeAmount
-      setIncomeAmount(0);
-    }
-    else {
-      // less than 0 reset incomeAmount
-      alert("Can't add add 0 or less than 0 to your income, can you? That would be an expense. Just input a normal positive number o_o")
-      setIncomeAmount(0);
-    }
-  }
-
-  return (
-    <>
-      <input type="number" value={incomeAmount} onChange={e => setIncomeAmount(parseInt(e.target.value))} />
-      <button className="plus-minus">+</button>
-      <button className="plus-minus">-</button>
-      <button className='addIncome' onClick={handleStoringIncome}>Add Income</button>
-      <p>Current income: ${props.myIncome}</p>
-    </>
-  );
-}
-
-// new expenses section component
-function NewExpenses(props) {
-  // define the category useState for input change
-  const [category, setCategory] = useState("");
-
-  // everytime a character changes in the input box handle input change
-  function handleInputChange(event) {
-    // setCategory to the value inputed during the event
-    setCategory(event.target.value);
-  }
-
-  // add a new category to options on click Add New
-  function addCategory() {
-    // set the category to a var to manipulate it
-    const newCategory = category;
-    // lift it up
-    props.onAddCategory(newCategory);
-    // reset the category
-    setCategory("")
-  }
-
-  return (
-    // displays a text an input box and the add new bttn
-    <>
-      <label htmlFor="category-input">What will be the name for your new category: </label>
-      <input type="text" value={category} onChange={handleInputChange} />
-      <button onClick={addCategory}>Add New</button>
-    </>
-  );
-}
-
-// dropdown menu component
-function CategoryDropdown(props) {
-  return (
-    // displays a dropdown menu, the default value will be the default value set with setCategories
-    // per category in categories display it as an option
-    <select id="category-dropdown" defaultValue={props.categories[0]}>
-      {props.categories.map((category) => (
-      <option key={category} value={category}>{category}</option>))}
-    </select>
-  );
-}
-
-// app component
 const App = () => {
   // define the categories useState for when a new category is added to the categories
   // default value of ["options"]
