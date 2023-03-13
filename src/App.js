@@ -62,9 +62,9 @@ const App = () => {
           <div>
             <h2>KEEP TRACK OF YOUR MONEY OR SOMETHING</h2>
             <p>MAYBE LIKE AN INSPIRATIONAL MONEY QUOTE HERE</p>
+            <button className='toggleComponents' onClick={handleToggleClick}>{currComponent}</button>
           </div>
           <div className='add-income'>
-            <button className='toggleComponents' onClick={handleToggleClick}>{currComponent}</button>
             {showComponent && <NewIncome onStoreIncome={handleStoreIncome} myIncome={myIncome}/>}
           </div>
           <div className="add-categories">

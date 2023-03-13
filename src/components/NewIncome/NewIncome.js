@@ -5,6 +5,7 @@ import React from "react";
 function NewIncome(props) {
   // set the useState for the incomeAmount
   const [incomeAmount, setIncomeAmount] = useState("");
+  const [stepSize, setStepSize] = useState(1)
 
   // handle change of income to stop at 10,000
   function handleIncomeChange(event) {
@@ -32,11 +33,25 @@ function NewIncome(props) {
     }
   }
 
+  function handleIncrement() {
+    const newIncomeAmount = parseFloat(incomeAmount) + stepSize
+    if (newIncomeAmount >= 0 & newIncomeAmount <= 50000) {
+      setIncomeAmount(prevIncomeAmount => prevIncomeAmount + stepSize)
+    }
+  }
+
+  function handleDecrement() {
+    const newIncomeAmount = parseFloat(incomeAmount) - stepSize
+    if (newIncomeAmount >= 0 & newIncomeAmount <= 50000) {
+      setIncomeAmount(prevIncomeAmount => prevIncomeAmount - stepSize)
+    }
+  }
+
   return (
     <>
-      <input className='input-box' type="number" value={incomeAmount} onChange={handleIncomeChange} />
-      <button className="plus-minus">+</button>
-      <button className="plus-minus">-</button>
+      <input className='input-box' type="number" value={incomeAmount} onChange={handleIncomeChange} step={stepSize}/>
+      <button className="plus-minus" onClick={handleIncrement}>+</button>
+      <button className="plus-minus" onClick={handleDecrement}>-</button>
       <button className='addIncome' onClick={handleAddIncome} disabled={incomeAmount <= 0}>Add Income</button>
       <p>Current income: {props.myIncome.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
 
