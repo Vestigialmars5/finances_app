@@ -11,6 +11,9 @@ const App = () => {
   const [categories,setCategories] = useState(["Categories"]);
   // define the myIncome useState for when we update income
   const [myIncome, setMyIncome] = useState(0);
+  // define the component to show useState
+  const [showComponent, setShowComponent] = useState(false)
+  const [currComponent, setCurrComponent] = useState("Income")
 
   // handle the new category with it as an parameter
   function handleAppCategory(newCategory) {
@@ -23,6 +26,16 @@ const App = () => {
   function handleStoreIncome(incomeAmount) {
     // i think the incomeAmount is passed as the prevIncome and we add the incomeAmount
     setMyIncome(prevIncome => prevIncome + incomeAmount);
+  }
+
+  // toggle between the expenses and income
+  const handleToggleClick = () => {
+    setShowComponent(!showComponent);
+    if (currComponent == "Income"){
+      setCurrComponent("Expenses");
+    } else {
+      setCurrComponent("Income")
+    }
   }
 
 
@@ -51,10 +64,11 @@ const App = () => {
             <p>MAYBE LIKE AN INSPIRATIONAL MONEY QUOTE HERE</p>
           </div>
           <div className='add-income'>
-            <NewIncome onStoreIncome={handleStoreIncome} myIncome={myIncome}/>
+            <button className='toggleComponents' onClick={handleToggleClick}>{currComponent}</button>
+            {showComponent && <NewIncome onStoreIncome={handleStoreIncome} myIncome={myIncome}/>}
           </div>
           <div className="add-categories">
-            <NewExpenses onAddCategory={handleAppCategory}/>
+            {!showComponent && <NewExpenses onAddCategory={handleAppCategory}/>}
           </div>
           <div className='category-dropdwon'>
             <CategoryDropdown categories={categories}/>
