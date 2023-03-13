@@ -5,15 +5,16 @@ import React from "react";
 function NewIncome(props) {
   // set the useState for the incomeAmount
   const [incomeAmount, setIncomeAmount] = useState("");
+  const [stepSize, setStepSize] = useState(1)
 
   // handle change of income to stop at 10,000
   function handleIncomeChange(event) {
     const incomeValue = event.target.value;
     const max = 50000;
     if (incomeValue <= max) {
-      setIncomeAmount(incomeValue)
+      setIncomeAmount(incomeValue);
     } else {
-      alert("The max is $50,000")
+      alert("The max is $50,000");
     }
   }
 
@@ -27,16 +28,30 @@ function NewIncome(props) {
     }
     else {
       // less than 0 reset incomeAmount
-      alert("Can't add add 0 or less than 0 to your income, can you? That would be an expense. Just input a normal positive number o_o")
+      alert("Can't add add 0 or less than 0 to your income, can you? That would be an expense. Just input a normal positive number o_o");
       setIncomeAmount("");
+    }
+  }
+
+  function handleIncrement() {
+    const newIncomeAmount = parseFloat(incomeAmount) + stepSize;
+    if (newIncomeAmount >= 0 & newIncomeAmount <= 50000) {
+      setIncomeAmount(prevIncomeAmount => parseFloat(prevIncomeAmount) + stepSize);
+    }
+  }
+
+  function handleDecrement() {
+    const newIncomeAmount = parseFloat(incomeAmount) - stepSize;
+    if (newIncomeAmount >= 0 & newIncomeAmount <= 50000) {
+      setIncomeAmount(prevIncomeAmount => parseFloat(prevIncomeAmount) - stepSize);
     }
   }
 
   return (
     <>
-      <input className='input-box' type="number" value={incomeAmount} onChange={handleIncomeChange} />
-      <button className="plus-minus">+</button>
-      <button className="plus-minus">-</button>
+      <input className='input-box' type="number" value={incomeAmount} onChange={handleIncomeChange} step={stepSize}/>
+      <button className="plus-minus" onClick={handleIncrement} disabled={incomeAmount == 50000}>+</button>
+      <button className="plus-minus" onClick={handleDecrement} disabled={incomeAmount == 0}>-</button>
       <button className='addIncome' onClick={handleAddIncome} disabled={incomeAmount <= 0}>Add Income</button>
       <p>Current income: {props.myIncome.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
 
