@@ -11,6 +11,7 @@ const App = () => {
   const [categories,setCategories] = useState(["Categories"]);
   // define the myIncome useState for when we update income
   const [myIncome, setMyIncome] = useState(0);
+  const [myExpenses, setMyExpenses] = useState(0)
   // define the component to show useState
   const [showComponent, setShowComponent] = useState(false)
   const [currComponent, setCurrComponent] = useState("Income")
@@ -26,6 +27,12 @@ const App = () => {
   function handleStoreIncome(incomeAmount) {
     // i think the incomeAmount is passed as the prevIncome and we add the incomeAmount
     setMyIncome(prevIncome => prevIncome + incomeAmount);
+  }
+
+  // sets the myExpenses to the Expenses amount to new amount plus the past amount
+  function handleStoreExpenses(ExpensesAmount) {
+    // i think the ExpensesAmount is passed as the prevExpenses and we add the ExpensesAmount
+    setMyExpenses(prevExpenses => prevExpenses + ExpensesAmount);
   }
 
   // toggle between the expenses and income
@@ -68,7 +75,8 @@ const App = () => {
             {showComponent && <NewIncome onStoreIncome={handleStoreIncome} myIncome={myIncome}/>}
           </div>
           <div className="add-categories">
-            {!showComponent && <NewExpenses onAddCategory={handleAppCategory}/>}
+            {!showComponent && <NewExpenses onStoreExpense={handleStoreExpenses} onAddCategory={handleAppCategory}
+            myExpenses={myExpenses}/>}
           </div>
           <div className='category-dropdwon'>
             <CategoryDropdown categories={categories}/>

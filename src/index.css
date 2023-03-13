@@ -62,8 +62,8 @@ nav ul li a {
 /* main */
 
 /* removes the up and down arrown from the input box */
-.add-income input[type=number]::-webkit-inner-spin-button,
-.add-income input[type=number]::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
