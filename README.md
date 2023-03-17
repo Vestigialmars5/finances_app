@@ -2,7 +2,7 @@
 This is my first real project I have a basic knowledge in python, html, css, javascript, bash and I'm starting react. I'm working on this project to test my skills and to build a portfolio for the future.
 
 # --Project's description--
-This is a website that will help people manage their money by adding income and expenses 
+A personal money management website to keep track of your budget and expenses.
 
 # Contributing
 If you happen to be reading this, feel free to contribute in any form Ideas, comments, code, tips, tips in how to format this readme better Basically anything helps
