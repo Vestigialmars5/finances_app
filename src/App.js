@@ -1,3 +1,4 @@
+// import my components and important things
 import {useState} from 'react'
 import './App.css';
 import NewExpenses from './components/NewExpenses/NewExpenses.js'
