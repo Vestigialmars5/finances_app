@@ -5,7 +5,7 @@ import React from "react";
 function NewIncome(props) {
   // set the useState for the incomeAmount
   // i need to do something with the stepsize
-  const [incomeAmount, setIncomeAmount] = useState("");
+  const [incomeAmount, setIncomeAmount] = useState(0);
   const [stepSize, setStepSize] = useState(1)
 
   // handle change of income to stop at 10,000
@@ -25,12 +25,7 @@ function NewIncome(props) {
       // lift it up
       props.onStoreIncome(parseFloat(incomeAmount));
       // reset incomeAmount
-      setIncomeAmount("");
-    }
-    else {
-      // less than 0 reset incomeAmount
-      alert("Can't add add 0 or less than 0 to your income, can you? That would be an expense. Just input a normal positive number o_o");
-      setIncomeAmount("");
+      setIncomeAmount(0);
     }
   }
 

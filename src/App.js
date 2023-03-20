@@ -76,11 +76,11 @@ const App = () => {
             {showComponent && <NewIncome onStoreIncome={handleStoreIncome} myIncome={myIncome}/>}
           </div>
           <div className="add-categories">
-            {!showComponent && <NewExpenses onStoreExpense={handleStoreExpenses} onAddCategory={handleAppCategory}
+            {!showComponent && <NewExpenses onStoreExpense={handleStoreExpenses}
             myExpenses={myExpenses}/>}
           </div>
           <div className='category-dropdwon'>
-            <CategoryDropdown categories={categories}/>
+            <CategoryDropdown categories={categories}  onAddCategory={handleAppCategory}/>
           </div>
         </main>
       </div>
