@@ -16,11 +16,17 @@ function CategoryDropdown(props) {
   // add a new category to options on click Add New
   function addCategory() {
     // set the category to a var to manipulate it
-    const newCategory = category;
-    // lift it up
-    props.onAddCategory(newCategory);
-    // reset the category
-    setCategory("")
+    const newCategory = category.toUpperCase().trim();
+    const arr = props.categories
+    if (arr.includes(newCategory) || newCategory == "" || newCategory){
+      alert("Category already in you categories or empty text")
+      setCategory("")
+    } else {
+      // lift it up
+      props.onAddCategory(newCategory.toUpperCase());
+      // reset the category
+      setCategory("")
+    }
   }
 
   return (
