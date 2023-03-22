@@ -1,5 +1,5 @@
 # -Vestigialmars5/finances_app
-This is my first real project I have a basic knowledge in python, html, css, javascript, bash and I'm starting react. I'm working on this project to test my skills and to build a portfolio for the future.
+This is my first real project I have a basic knowledge in python, html, css, javascript, bash and I'm starting react. I'm working on this project to test my skills and to build a portfolio for the future. I will be including api's, some backend and web design.
 
 # --Project's description--
 A personal money management website to keep track of your budget and expenses.
