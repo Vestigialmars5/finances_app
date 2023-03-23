@@ -63,7 +63,15 @@ const App = () => {
               <li><a href="#">GOALS</a></li>
             </ul>
           </nav>
-          <h1 className="title">YOUR PORTFOLIO</h1>
+          <div className='wrapper'>
+            <div className='myIncome'>
+              <h2>{myIncome.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</h2>
+            </div>
+              <h1 className="title">YOUR PORTFOLIO</h1>
+            <div className='myExpenses'>
+              <h2>{myExpenses.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</h2>
+            </div>
+          </div>
         </header>
         {/* main - activities */}
         <main>

@@ -49,7 +49,7 @@ function NewIncome(props) {
       <button className="plus-minus" onClick={handleIncrement} disabled={incomeAmount == 50000}>+</button>
       <button className="plus-minus" onClick={handleDecrement} disabled={incomeAmount == 0}>-</button>
       <button className='addIncome' onClick={handleAddIncome} disabled={incomeAmount <= 0}>Add Income</button>
-      <p>Current income: {props.myIncome.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
+      <p>Current Income: {props.myIncome.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
 
     </>
   );
