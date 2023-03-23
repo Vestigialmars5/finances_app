@@ -34,6 +34,7 @@ const App = () => {
   function handleStoreExpenses(ExpensesAmount) {
     // i think the ExpensesAmount is passed as the prevExpenses and we add the ExpensesAmount
     setMyExpenses(prevExpenses => prevExpenses + ExpensesAmount);
+    setMyIncome(prevIncome => prevIncome - ExpensesAmount)
   }
 
   // toggle between the expenses and income
