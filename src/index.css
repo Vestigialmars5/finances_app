@@ -55,8 +55,29 @@ nav ul li a {
   color: white;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  align-items: center;
+}
+
+.myIncome, .myExpenses {
+  margin: 0;
+  width: 33%;
+}
+
+.myIncome {
+  color: green;
+}
+
+.myExpenses {
+  color: red;
+}
+
 .title {
-  margin-bottom: 8px;
+  margin: 8px 0 8px;
+  width: 33%;
 }
 
 /* main */
