@@ -4,6 +4,7 @@ import './App.css';
 import NewExpenses from './components/NewExpenses/NewExpenses.js'
 import NewIncome from './components/NewIncome/NewIncome.js'
 import CategoryDropdown from './components/CategoryDropdown/CategoryDropdown.js'
+import RemoveCategory from './components/CategoryDropdown/RemoveCategory';
 
 
 const App = () => {
@@ -24,6 +25,10 @@ const App = () => {
     setCategories((prevCategories) => [...prevCategories, newCategory]);
   }
 
+  function handleRemoveCategory(categories,category){
+    const index = categories.indexOf(category);
+  }
+
   // sets the myIncome to the income amount to new amount plus the past amount
   function handleStoreIncome(incomeAmount) {
     // i think the incomeAmount is passed as the prevIncome and we add the incomeAmount
@@ -34,7 +39,7 @@ const App = () => {
   function handleStoreExpenses(ExpensesAmount) {
     // i think the ExpensesAmount is passed as the prevExpenses and we add the ExpensesAmount
     setMyExpenses(prevExpenses => prevExpenses + ExpensesAmount);
-    setMyIncome(prevIncome => prevIncome - ExpensesAmount)
+    setMyIncome(prevIncome => prevIncome - ExpensesAmount);
   }
 
   // toggle between the expenses and income
@@ -43,7 +48,7 @@ const App = () => {
     if (currComponent == "Income"){
       setCurrComponent("Expenses");
     } else {
-      setCurrComponent("Income")
+      setCurrComponent("Income");
     }
   }
 
@@ -88,8 +93,11 @@ const App = () => {
             {!showComponent && <NewExpenses onStoreExpense={handleStoreExpenses}
             myExpenses={myExpenses}/>}
           </div>
-          <div className='category-dropdwon'>
+          <div className='category-dropdown'>
             <CategoryDropdown categories={categories}  onAddCategory={handleAppCategory}/>
+          </div>
+          <div className='remove-dropdown'>
+            <RemoveCategory categories={categories} onRemoveCategory={handleRemoveCategory}/>
           </div>
         </main>
       </div>
