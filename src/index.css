@@ -98,3 +98,27 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* drop down */
+.remove-dropdown .remove-choices {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  row-gap: 50px;
+}
+
+.remove-dropdown .cat-rem {
+  display: flex;
+  justify-content: center;
+}
+
+.remove-dropdown .cat-rem p {
+  margin-right: 5px;
+}
+
+.remove-dropdown .cat-rem button {
+  border: none;
+  border-radius: 5px;
+}
+
+.remove-dropdown div {
+  margin: 0;
+
+}

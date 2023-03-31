@@ -1,14 +1,20 @@
 import React from "react";
 
 const RemoveCategory = (props) => {
-  console.log(props.categories)
+  function handleDeleteCategory(index){
+
+  }
+
   return (
     <>
     <div>
       <button>Remove Category</button>
-      <div>
-        {props.categories.map((category) => (<p key={category}>{category}</p>))}
-        <button>X</button>
+      <div className="remove-choices">
+        {props.categories.map((category,index) => (
+        <div className="cat-rem">
+          <p key={category}>{category}</p>
+          <button onClick={() => handleDeleteCategory(index)}>X</button>
+        </div>))}
       </div>
     </div>
     </>
