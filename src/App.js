@@ -17,6 +17,8 @@ const App = () => {
   // define the component to show useState
   const [showComponent, setShowComponent] = useState(false)
   const [currComponent, setCurrComponent] = useState("Income")
+  const [showRemove, setShowRemove] = useState("false")
+  const [removing, setRemoving] = useState("off")
 
   // handle the new category with it as an parameter
   function handleAppCategory(newCategory) {
@@ -49,6 +51,18 @@ const App = () => {
       setCurrComponent("Expenses");
     } else {
       setCurrComponent("Income");
+    }
+  }
+
+  // toggle between showing the categories to remove
+  const handleToggleRemoveCategory = () => {
+    setShowRemove(!showRemove);
+    if (removing == "on"){
+      setRemoving("off");
+      console.log("off")
+    } else {
+      setRemoving("on")
+      console.log("on")
     }
   }
 
@@ -97,7 +111,8 @@ const App = () => {
             <CategoryDropdown categories={categories}  onAddCategory={handleAppCategory}/>
           </div>
           <div className='remove-dropdown'>
-            <RemoveCategory categories={categories} onRemoveCategory={handleRemoveCategory}/>
+            <button onClick={handleToggleRemoveCategory}>Remove Category</button>
+            {!showRemove && <RemoveCategory categories={categories} onRemoveCategory={handleRemoveCategory}/>}
           </div>
         </main>
       </div>

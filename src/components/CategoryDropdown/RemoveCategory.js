@@ -8,7 +8,6 @@ const RemoveCategory = (props) => {
   return (
     <>
     <div>
-      <button>Remove Category</button>
       <div className="remove-choices">
         {props.categories.slice(1,).map((category,index) => (
         <div className="cat-rem">
