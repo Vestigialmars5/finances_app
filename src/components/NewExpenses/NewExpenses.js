@@ -12,8 +12,6 @@ function NewExpenses(props) {
     const max = 50000;
     if (expenseValue <= max) {
       setExpenseAmount(expenseValue);
-    } else {
-      alert("The max is $50,000");
     }
   }
 
