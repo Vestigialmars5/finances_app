@@ -14,8 +14,6 @@ function NewIncome(props) {
     const max = 50000;
     if (incomeValue <= max) {
       setIncomeAmount(incomeValue);
-    } else {
-      alert("The max is $50,000");
     }
   }
 
