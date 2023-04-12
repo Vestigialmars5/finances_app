@@ -26,6 +26,7 @@ function NewExpenses(props) {
   }
 
   function handleIncrement() {
+    // handles the + button for increment
     const newExpenseAmount = parseFloat(expenseAmount) + stepSize;
     if (newExpenseAmount >= 0 & newExpenseAmount <= 50000) {
       setExpenseAmount(prevExpenseAmount => parseFloat(prevExpenseAmount) + stepSize);
@@ -33,6 +34,7 @@ function NewExpenses(props) {
   }
 
   function handleDecrement() {
+    // handles the + button for decrement
     const newExpenseAmount = parseFloat(expenseAmount) - stepSize;
     if (newExpenseAmount >= 0 & newExpenseAmount <= 50000) {
       setExpenseAmount(prevExpenseAmount => parseFloat(prevExpenseAmount) - stepSize);

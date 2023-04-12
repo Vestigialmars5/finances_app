@@ -4,7 +4,7 @@ import React from "react";
 // new income section component
 function NewIncome(props) {
   // set the useState for the incomeAmount
-  // i need to do something with the stepsize
+  // I need to do something with the stepsize
   const [incomeAmount, setIncomeAmount] = useState(0);
   const [stepSize, setStepSize] = useState(1)
 
