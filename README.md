@@ -3,7 +3,7 @@ This is my first real project I have a basic knowledge in python, html, css, jav
 I'm also using this opportunity to play around with repositories, branches, etc. and getting used to git and github.
 
 # --Project's description--
-A personal money management website to keep track of your budget and expenses.
+A personal money management website to keep track of your budget and expenses. It will include things to add your income or expenses to a certain category, fully costumizable as well as some insights of the spending habits.
 
 # Contributing
 If you happen to be reading this, feel free to contribute in any form ideas, comments, code, tips, tips in how to format this readme better Basically anything helps
