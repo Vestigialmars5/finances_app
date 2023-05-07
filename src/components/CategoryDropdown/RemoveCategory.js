@@ -1,5 +1,6 @@
 import React from "react";
 
+// Takes the category index as input and removes the selected category
 const RemoveCategory = (props) => {
   function handleDeleteCategory(index){
 
