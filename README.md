@@ -9,6 +9,7 @@ A personal money management website to keep track of your budget and expenses. I
 If you happen to be reading this, feel free to contribute in any form ideas, comments, code, tips, tips in how to format this readme better Basically anything helps
 
 # Current place
-As of right now I'm only adding ideas to what I want in the project so everything is very messy and without the real text that will go in each tag. I decided to shift into a react project since I want a lot of moving parts without having to refresh the page all the time. So I created this new repository in which I rebased my project for a fresh start.
+As of right now I'm only adding ideas to what I want in the project so everything is very messy and without the real text that will go in each tag. I decided to shift into a react project since I want a lot of moving parts without having to refresh the page all the time. So I created this new repository in which I rebased my project for a fresh start
 
 # Thank you
+# !Dropped for now!
